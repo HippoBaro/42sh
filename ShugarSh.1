@@ -1,0 +1,57 @@
+.\" Manpage for nuseradd.
+.\" Contact vivek@nixcraft.net.in to correct errors or typos.
+.TH man 8 "24 May 2015" "1.0" "ShugarSh man page"
+.SH NAME
+ShugarSh \- A basic shell for UNIX system. 
+.SH SYNOPSIS
+Usage ./42sh
+.SH DESCRIPTION
+ShugarSh is a simple shell based on tcsh for UNIX system. It has built-in support for aliases, history, env variable managment and backgrounding.
+All standard redirection and bollean operators are built-in.
+Fully written using TERMCAPS, it enables full command editing. If TERMACPS are not available, ShuagarSh will work in canonical mode but some features will be unavailable.
+.SH BUILTINS
+env : Print environement variable table.
+
+setenv : Create or edit an environement variable. Usage : setenv [VAR] [VALUE]
+
+unsetenv : Delete an existing environement variable. Uage : unsetenv [VAR]
+
+alias : Print or create an alias. Usage : alias OR alias [ALIAS] [COMMAND]
+
+history : Print or clear shell history. The unary operator '!' can also be used with relative or absolute value.
+
+import : Manually import aliases and history from their respective files. See FILES.
+
+globbing : Use the unary operator '*' to enable command globbing. See examples.
+
+backgrounding : Use the unary operator '&' at the end of a command to lauch it in the background. ShugarSh will give you the PID of the child process if you want to kill it. There is no job control built into ShugarSh (sad face).  
+.SH EASTEREGGS
+StarWars : Provide ASCII animation of episode IV done locally. No telnet involved. Usage : StarWars [FRAMERATE (see usage)]
+
+StillAlive : This was a triumph. Only available if ShugarSh was compilded using the proper Makefile.
+.SH SHORTCUT
+CTRL + L : Clear terminal
+
+CTRL + R : Print history
+
+UP KEY : Navigate upwise in history
+
+DOWN KEY : Navigate downwise in history
+
+TAB : Autoguess based on current entry
+.SH EXAMPLES
+Command such as these are covered :
+
+echo $USER (will print user name.)
+
+echo * | cat -e (will print files in pwd + \\n.)
+
+echo "test list to file" && ls >> FileToAppend (will print string and create a file with ls output appended to any existing data).
+
+sleep 20 && ls / -lR > output & (will create a background job)
+.SH FILES
+To unable rich features ShugarSh create two hidden files at $HOME. Those files contains the history and aliases library. They can be safely removed.
+.SH BUGS
+No support for unary redirection operator.
+.SH AUTHOR
+Made by barrau_h ; diacon_c ; carle_s ; david_h and vuaran_v with love.
