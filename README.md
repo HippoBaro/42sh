@@ -17,7 +17,7 @@
       avec le binaire compilé via le Makefile incluant la SDL).
     * Tapez "StarWars" pour un bonus qui vaux (au moins) 42! points.
 
-# Raccourcie clavier
+# Raccourcis clavier
     * CTRL+L   : Clear le terminal
     * CTRL+R   : Affiche l'historique (= "history")
     * TAB      : Autocomplétion
